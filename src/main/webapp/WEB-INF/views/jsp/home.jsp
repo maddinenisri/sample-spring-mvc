@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Sample MVC - Login</title>
+<title>Sample MVC - Successful Login</title>
 
 <spring:url value="/resources/core/css/main.css" var="coreCss" />
 <spring:url value="/webjars/bootstrap/5.2.0/css/bootstrap.min.css" var="bootstrapCss" />
@@ -20,30 +20,9 @@
 <main role="main" class="container">
 
 <div class="starter-template">
-      <h1>Login</h1>
-      <form name='login' action="/login" method='POST'>
-
-
-
-		<div align="center">
-			<table>
-				<tr>
-					<td>User Name</td>
-					<td><input type="text" name="username" /></td>
-				</tr>
-				<tr>
-					<td>Password</td>
-					<td><input type="password" name="password" /></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" value="Submit" /></td>
-				</tr>
-			</table>
-			<div style="color: red">${error}</div>
-
-		</div>
-	</form>
+	<font color="green"><h1>Hello</h1></font>
+	<h2>${msg}</h2> You have successfully logged in.
+	<font color="green"><h1>Welcome to Spring world !</h1></font>
 </div>
 
 </main>
