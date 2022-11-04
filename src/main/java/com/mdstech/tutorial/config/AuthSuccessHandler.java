@@ -12,8 +12,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class AuthSuccessHandler implements AuthenticationSuccessHandler {
 
+    private static final Logger logger = LoggerFactory.getLogger(AuthSuccessHandler.class);
     @Override
     public void onAuthenticationSuccess(
             HttpServletRequest request,
@@ -24,7 +28,7 @@ public class AuthSuccessHandler implements AuthenticationSuccessHandler {
         session.setAttribute("user", authUser);
         session.setAttribute("username", authUser.getUsername());
         session.setAttribute("authorities", authentication.getAuthorities());
-        System.out.println(authUser.getUsername()+":"+authUser.getAuthorities());
+        logger.info(authUser.getUsername()+":"+authUser.getAuthorities());
 
         //set our response to OK status
         response.setStatus(HttpServletResponse.SC_OK);
